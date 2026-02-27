@@ -137,3 +137,18 @@ td button:first-child:hover {
     padding: 8px;
   }
 }
+
+/* Force strong text color */
+th {
+  color: #ffffff !important;
+}
+
+td {
+  color: #000000 !important;
+  font-weight: 600;
+  /* Make text bolder */
+}
+
+tbody tr {
+  background-color: #ffffff;
+}
