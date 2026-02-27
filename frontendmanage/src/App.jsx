@@ -1,11 +1,12 @@
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/students"
+
+
 
 import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
 
-  const API = "http://localhost:5000/api/students";
+  const API = "https://student-details-m0z3.onrender.com/api/students";
 
   const [students, setStudents] = useState([]);
   const [formData, setFormData] = useState({
