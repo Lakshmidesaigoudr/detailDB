@@ -1,24 +1,21 @@
 import dotenv from "dotenv";
 dotenv.config();
-
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 // --------------------
 // Middlewares
 // --------------------
 app.use(express.json());
-app.use(cors({
-    origin: "http://localhost:5173"
-}));
+app.use(cors());
 
 // --------------------
 // MongoDB Connection
-// --------------------
+// -------------------
 mongoose.connect(process.env.MONGO_URL, {
     serverSelectionTimeoutMS: 5000
 })
@@ -64,10 +61,11 @@ const Student = mongoose.model("Student", studentSchema);
 // ROUTES
 // --------------------
 
+
 // ✅ GET ALL STUDENTS
 app.get("/api/students", async (req, res) => {
     try {
-        const students = await Student.find().sort({ createdAt: -1 });
+        const students = await Student.find();
         res.json(students);
     } catch (error) {
         res.status(500).json({ message: "Server Error" });
