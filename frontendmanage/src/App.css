@@ -1,4 +1,8 @@
 /* Reset */
+html {
+  color-scheme: light;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +17,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  color: #000000;
+  /* Force text color */
+  -webkit-text-fill-color: #000000;
+  /* Fix Chrome auto dark */
 }
 
 /* Main Container */
@@ -77,6 +86,13 @@ table {
   background: white;
   border-radius: 10px;
   overflow: hidden;
+}
+
+table,
+th,
+td {
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 thead {
